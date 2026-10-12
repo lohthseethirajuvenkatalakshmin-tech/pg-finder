@@ -18,7 +18,7 @@ $token = htmlspecialchars(csrf_token(), ENT_QUOTES, 'UTF-8');
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
     <div class="announcement"><span class="announcement-dot"></span> Your next chapter starts with the right address <span class="announcement-arrow">↗</span></div>
@@ -45,7 +45,7 @@ $token = htmlspecialchars(csrf_token(), ENT_QUOTES, 'UTF-8');
                 <div class="hero-social"><div class="avatar-stack"><span class="avatar avatar-one">A</span><span class="avatar avatar-two">S</span><span class="avatar avatar-three">R</span><span class="avatar avatar-four">+</span></div><div><strong>2,400+ students</strong><span>found their place with us</span></div><span class="hero-divider"></span><div class="rating-mini"><span>★</span><strong>4.9</strong><span>from our community</span></div></div>
             </div>
             <div class="hero-art" aria-label="A simple shared PG bedroom with bunk beds">
-                <div class="hero-image-main"><img src="assets/images/pg-room.svg" alt="A simple shared PG bedroom with a bed, study desk, and window"></div>
+                <div class="hero-image-main"><img src="../assets/images/pg-room.svg" alt="A simple shared PG bedroom with a bed, study desk, and window"></div>
                 <div class="hero-image-note"><span class="note-icon">✳</span><span><strong>Room, bed, Wi-Fi. Sorted.</strong><small>Simple stays. Clear monthly prices.</small></span></div>
                 <div class="floating-stamp"><span>GOOD</span><span>ROOMS</span><span>FAIR RENT <b>↗</b></span></div>
                 <div class="hero-sparkle sparkle-one">✳</div><div class="hero-sparkle sparkle-two">✳</div>
@@ -109,6 +109,6 @@ $token = htmlspecialchars(csrf_token(), ENT_QUOTES, 'UTF-8');
     <script>window.ROOMIE_USER = <?= json_encode($user, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;</script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-    <script src="assets/js/app.js" defer></script>
+    <script src="../assets/js/app.js" defer></script>
 </body>
 </html>
