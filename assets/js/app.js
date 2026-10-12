@@ -108,6 +108,7 @@
     async function loadProperties() {
         grid.setAttribute('aria-busy', 'true');
         grid.classList.add('is-loading');
+        grid.classList.remove('has-error');
         loadError.hidden = true;
         emptyState.hidden = true;
         try {
@@ -123,6 +124,9 @@
         } catch (error) {
             grid.innerHTML = '';
             grid.setAttribute('aria-busy', 'false');
+            grid.classList.add('has-error');
+            document.getElementById('all-count').textContent = '';
+            document.getElementById('results-label').textContent = "Couldn't load stays";
             loadError.hidden = false;
             console.error('Could not load properties:', error);
         } finally {
@@ -310,7 +314,8 @@
     });
     document.getElementById('sort-button').addEventListener('click', (event) => {
         sortTopRated = !sortTopRated;
-        event.currentTarget.innerHTML = `${sortTopRated ? '✧ &nbsp;Top rated' : '↕ &nbsp;Newest first'} <span>⌄</span>`;
+        event.currentTarget.innerHTML = `${sortTopRated ? 'Recommended' : 'Newest first'} <span>⌄</span>`;
+        event.currentTarget.setAttribute('aria-label', `Sort by ${sortTopRated ? 'recommended' : 'newest first'}`);
         loadProperties();
     });
     document.getElementById('clear-filters').addEventListener('click', clearFilters);
