@@ -23,11 +23,11 @@ function database(): PDO
         return $connection;
     }
 
-    $host = getenv('DB_HOST') ?: '127.0.0.1';
-    $port = getenv('DB_PORT') ?: '3306';
-    $name = getenv('DB_NAME') ?: 'student_stays';
-    $username = getenv('DB_USER') ?: 'root';
-    $password = getenv('DB_PASSWORD') ?: '';
+    $host = getenv('DB_HOST') ?: getenv('MYSQLHOST') ?: '127.0.0.1';
+    $port = getenv('DB_PORT') ?: getenv('MYSQLPORT') ?: '3306';
+    $name = getenv('DB_NAME') ?: getenv('MYSQLDATABASE') ?: 'student_stays';
+    $username = getenv('DB_USER') ?: getenv('MYSQLUSER') ?: 'root';
+    $password = getenv('DB_PASSWORD') ?: getenv('MYSQLPASSWORD') ?: '';
 
     $connection = new PDO(
         "mysql:host={$host};port={$port};dbname={$name};charset=utf8mb4",
