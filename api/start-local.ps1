@@ -36,4 +36,4 @@ if (-not $phpCheck) {
     }
 }
 
-Write-Host "Roomie is ready at http://${phpHost}:$phpPort/PayGuest/index.php"
+Write-Host "Roomie is ready at http://${phpHost}:$phpPort/api/index.php"
